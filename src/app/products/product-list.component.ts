@@ -5,5 +5,18 @@ import { Component } from '@angular/core';
   templateUrl: './product-list.component.html'
 })
 export class ProductListComponent {
-  pageTitle = 'Product List';
+  pageTitle: string = 'Product List!';
+  products: any[] = [
+    {
+      "productId": 2,
+      "productName": "Garden Cart",
+      "productCode": "GDN-0023",
+      "releaseDate": "March 18, 2016",
+      "description": "15 gallon capacity rooling garden card",
+      "price": 32.99,
+      "starRating": 4.2,
+
+    }
+
+  ];
 }
