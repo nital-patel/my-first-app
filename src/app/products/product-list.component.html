@@ -6,7 +6,8 @@
     <div class="row">
       <div class="col-md-2"></div>
       <div class="col-md-4">
-        <input type="text" />
+        <input type="text"
+            [(ngModel)]='listFilter' />
       </div>
     </div>
     <div class="row">
@@ -21,7 +22,7 @@
           <th>
             <button class="btn btn-outline-primary"
             (click)='toggleImage()'>
-              {{showImage ? 'Hide' : 'show'}}
+              {{showImage ? 'Hide' : 'show'}} Image
             </button>
           </th>
           <th>Product</th>
@@ -41,10 +42,10 @@
             [style.margin.px]='imageMargin'>
 
           </td>
-          <td>{{ product.productName }}</td>
-          <td>{{ product.productCode }}</td>
+          <td>{{ product.productName  }}</td>
+          <td>{{ product.productCode | lowercase }}</td>
           <td>{{ product.releaseDate }}</td>
-          <td>{{ product.price }}</td>
+          <td>{{ product.price | currency:'USD':'symbol':'1.2-2' }}</td>
           <td>{{ product.starRating }}</td>
         </tr>
         </tbody>
