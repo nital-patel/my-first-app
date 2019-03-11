@@ -6,7 +6,10 @@ import {buffer} from 'rxjs/operators';
   templateUrl: './product-list.component.html'
 })
 export class ProductListComponent {
-  pageTitle = 'Product List!';
+  pageTitle: string = 'Product List!';
+  imageWidth: number = 50;
+  imageMargin: number = 2;
+  showImage: boolean = false;
   products: any[] = [
     {
       productId: 2,
@@ -16,7 +19,10 @@ export class ProductListComponent {
       description: '15 gallon capacity rooling garden card',
       price: 32.99,
       starRating: 4.2,
-      imageUrl: 'https://images-na.ssl-images-amazon.com/images/I/516j-2pyjEL.jpg'
+      imageUrl: 'https://tse3.mm.bing.net/th?id=OIP.QZDOqe-3GtduDpvzL6T_ggHaHa&pid=15.1&P=0&w=300&h=300'
     }
   ];
+  toggleImage(): void {
+    this.showImage = !this.showImage;
+  }
 }

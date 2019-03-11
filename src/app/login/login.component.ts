@@ -7,25 +7,10 @@ import {Component} from '@angular/core';
 })
 
 export class LoginComponent {
-   User = {
+  User = {
     id: 0,
     name: null,
     emailID: null,
     password: null,
   };
-  constructor(private userService : UserService) {
-
-  }
-loginUser() {
-  this.userService.validateUser(this.user).subscribe((returnedUser: User[]) =>{
-    if(returnedUser != null && returnedUser.length != 0) {
-      this.loginMessage = "Logged in succesfully!"
-      this.user = returnedUser[0];
-      this.loginSucess = true;
-    } else {
-      this.loginMessage = "Login Failed";
-      this.loginSucess = false;
-    }
-  })
-}
 }
