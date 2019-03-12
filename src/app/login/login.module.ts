@@ -6,14 +6,12 @@ import { UserService } from '../services/login.service';
 
 @NgModule({
   declarations: [
-    LoginComponent,
   ],
   imports: [
     FormsModule,
     BrowserModule,
   ],
-  providers: [UserService],
-  exports: [LoginComponent]
+  providers: [UserService]
 })
 export class LoginModule {
 

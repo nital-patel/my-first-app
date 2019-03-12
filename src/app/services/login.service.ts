@@ -4,6 +4,7 @@ import { Observable } from 'rxjs';
 import { User } from '../login/login.user';
 
 const JSON_SERVICE = 'http://localhost:3000';
+
 @Injectable()
 export class UserService {
 
@@ -11,8 +12,7 @@ export class UserService {
 
   }
   validateUser(user: User): Observable<User[]> {
-    let parameter = 'emailID=' + user.emailID + '&password=' + user.password;
+    const parameter = 'emailID=' + user.emailID + '&password=' + user.password;
     return this.http.get<User[]>(JSON_SERVICE + '/users?' + parameter);
   }
-
 }
