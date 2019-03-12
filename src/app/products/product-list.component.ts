@@ -1,9 +1,11 @@
 import { Component } from '@angular/core';
+import { IProduct} from './product';
 import {buffer} from 'rxjs/operators';
 
 @Component({
   selector: 'app-products',
-  templateUrl: './product-list.component.html'
+  templateUrl: './product-list.component.html',
+  styleUrls: ['./product-list.component.css']
 })
 export class ProductListComponent {
   pageTitle: string = 'Product List!';
@@ -11,7 +13,7 @@ export class ProductListComponent {
   imageMargin: number = 2;
   showImage: boolean = false;
   listFilter: string = 'cart';
-  products: any[] = [
+  products: IProduct[] = [
     {
       productId: 2,
       productName: 'Garden Cart',
@@ -21,6 +23,16 @@ export class ProductListComponent {
       price: 32.99,
       starRating: 4.2,
       imageUrl: 'https://tse3.mm.bing.net/th?id=OIP.QZDOqe-3GtduDpvzL6T_ggHaHa&pid=15.1&P=0&w=300&h=300'
+    },
+    {
+      productId: 5,
+      productName: 'Hammer',
+      productCode: 'TBX-0048',
+      releaseDate: 'may 21, 2016',
+      description: 'Curved claw steel hammer',
+      price: 8.9,
+      starRating: 4.8,
+      imageUrl: ''
     }
   ];
   toggleImage(): void {
