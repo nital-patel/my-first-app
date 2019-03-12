@@ -1,27 +1,21 @@
 
-<div class="card">
+<div class="form-row align-items-center">
   <div class="card-body">
-    <div class="row">
-      <div class="col-md-6">
-        <a href='https://www.google.com/'>Login</a>
-      </div>
+    <div class="alert alert-success" role="alert" *ngIf="loginMessage != null && loginSucess">
+      {{loginMessage}}
     </div>
-  </div>
-</div>
-
-
-  <div class="form-row align-items-center">
+    <div class="alert alert-danger" role="alert" *ngIf="loginMessage != null && !loginSucess">
+      {{loginMessage}}
+    </div>
     <div class="col-sm-3 my-1">
-      <label class="sr-only" for="inlineFormInputName">Name</label>
-      <input type="text" class="form-control" id="inlineFormInputName" placeholder="Email">
+      <label class="sr-only" for="inlineFormInputName">Email address </label>
+      <input type="email" #emailRef [(ngModel)]="user.emailID"   class="form-control" id="inlineFormInputName" placeholder="Email">
     </div>
     <div class="col-sm-3 my-1">
       <label class="sr-only" for="inlineFormInputGroupUsername">Password</label>
       <div class="input-group">
-        <div class="input-group-prepend">
-          <div class="input-group-text">@</div>
-        </div>
-        <input type="text" class="form-control" id="inlineFormInputGroupUsername" placeholder="Password">
+        <div class="input-group-text">@</div>
+        <input type="password" #passwordRef [(ngModel)]="user.password" class="form-control" id="inlineFormInputGroupUsername" placeholder="Password">
       </div>
     </div>
     <div class="col-auto my-1">
@@ -33,7 +27,7 @@
       </div>
     </div>
     <div class="col-auto my-1">
-      <button type="submit" class="btn btn-primary">Submit</button>
+      <button type="submit" class="btn btn-primary" (click)="loginUser()">Login</button>
     </div>
   </div>
-
+</div>

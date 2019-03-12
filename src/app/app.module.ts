@@ -4,8 +4,11 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import {ProductListComponent} from './products/product-list.component';
-import {LoginComponent} from './login/login.component';
 import {FormsModule} from '@angular/forms';
+import {LoginComponent} from './login/login.component';
+import {HttpClientModule} from '@angular/common/http';
+import {UserService} from './services/login.service';
+import {LoginModule} from './login/login.module';
 
 @NgModule({
   declarations: [
@@ -16,9 +19,10 @@ import {FormsModule} from '@angular/forms';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [UserService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

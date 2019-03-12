@@ -1,4 +1,6 @@
 import {Component} from '@angular/core';
+import { User } from './login.user';
+import { UserService } from '../services/login.service';
 
 @Component({
   selector: 'app-login',
@@ -7,10 +9,27 @@ import {Component} from '@angular/core';
 })
 
 export class LoginComponent {
-  User = {
+  loginMessage: string = null;
+  loginSucess: boolean = false;
+  user: User = {
     id: 0,
     name: null,
     emailID: null,
     password: null,
   };
+  constructor(private userService: UserService) {
+
+  }
+  loginUser() {
+    this.userService.validateUser(this.user).subscribe((returnedUser: User[]) => {
+      if (returnedUser !== null && returnedUser.length !== 0) {
+        this.loginMessage = 'Login succesfully!';
+        this.user = returnedUser[0];
+        this.loginSucess = true;
+      } else {
+        this.loginMessage = 'Login Failed';
+        this.loginSucess = false;
+      }
+    });
+  }
 }

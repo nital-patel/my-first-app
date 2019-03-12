@@ -3,11 +3,13 @@
     {
       "id": 1,
       "name": "niti",
+      "email": "niti@gmail.com",
       "password": "angular"
     },
     {
       "id": 2,
       "name": "disha",
+      "email": "disha@gmail.com",
       "password": "atit"
     }
   ]
