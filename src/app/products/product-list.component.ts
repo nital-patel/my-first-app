@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { IProduct} from './product';
 import {buffer} from 'rxjs/operators';
+import {promise} from 'selenium-webdriver';
 
 @Component({
   selector: 'app-products',
@@ -12,7 +13,15 @@ export class ProductListComponent {
   imageWidth: number = 50;
   imageMargin: number = 2;
   showImage: boolean = false;
-  listFilter: string = 'cart';
+  _listFilter: string;
+  filteredProducts: IProduct[];
+  get listFilter(): string {
+    return this._listFilter;
+  }
+  set listFilter(vaule:string) {
+    this._listFilter = vaule;
+    this.filteredProducts = this.listFilter ? this.performFilter(this.listFilter) : this.products;
+  }
   products: IProduct[] = [
     {
       productId: 2,
@@ -35,6 +44,14 @@ export class ProductListComponent {
       imageUrl: ''
     }
   ];
+  constructor() {
+    this.filteredProducts = this.products;
+    this.listFilter = 'cart';
+  }
+  performFilter(filterBy: string): IProduct[] {
+    filterBy = filterBy.toLocaleLowerCase();
+    return this.products.filter((product: IProduct) => product.productName.toLocaleLowerCase().indexOf(filterBy) !== -1);
+  }
   toggleImage(): void {
     this.showImage = !this.showImage;
   }
