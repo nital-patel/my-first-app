@@ -17,7 +17,7 @@ export class ProductListComponent {
     {
       productId: 2,
       productName: 'Garden Cart',
-      productCode: 'GDN-0023',
+      productCode: 'GDN 0023',
       releaseDate: 'March 18, 2016',
       description: '15 gallon capacity rooling garden card',
       price: 32.99,
@@ -27,7 +27,7 @@ export class ProductListComponent {
     {
       productId: 5,
       productName: 'Hammer',
-      productCode: 'TBX-0048',
+      productCode: 'TBX 0048',
       releaseDate: 'may 21, 2016',
       description: 'Curved claw steel hammer',
       price: 8.9,

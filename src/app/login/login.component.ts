@@ -22,7 +22,7 @@ export class LoginComponent {
   }
   loginUser() {
     this.userService.validateUser(this.user).subscribe((returnedUser: User[]) => {
-      if (returnedUser != null && returnedUser.length != 0) {
+      if (returnedUser != null && returnedUser.length !== 0) {
         this.loginMessage = 'Login succesfully!';
         this.user = returnedUser[0];
         this.loginSucess = true;
