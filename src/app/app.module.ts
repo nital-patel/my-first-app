@@ -7,21 +7,24 @@ import {ProductListComponent} from './products/product-list.component';
 import {FormsModule} from '@angular/forms';
 import {LoginComponent} from './login/login.component';
 import {HttpClientModule} from '@angular/common/http';
-import {UserService} from './services/login.service';
 import {LoginModule} from './login/login.module';
+import {StarComponent} from './products/shared/star.component';
+import {ProductModule} from './products/product.module';
 
 @NgModule({
   declarations: [
     AppComponent,
     ProductListComponent,
-    LoginComponent
+    LoginComponent,
+    StarComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
-    LoginModule
+    LoginModule,
+    ProductModule
   ],
   providers: [],
   bootstrap: [AppComponent]
