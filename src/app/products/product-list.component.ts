@@ -6,9 +6,8 @@ import { ProductService } from '../services/product.service';
   selector: 'app-products',
   templateUrl: './product-list.component.html',
   styleUrls: ['./product-list.component.css'],
-
 })
-export class ProductListComponent {
+export class ProductListComponent implements OnInit {
   pageTitle = 'Product List!';
   imageWidth = 50;
   imageMargin = 2;
@@ -36,7 +35,10 @@ export class ProductListComponent {
     this.showImage = !this.showImage;
   }
   ngOnInit(): void {
-    this.products = this.productService.getProducts();
-    this.filteredProducts = this.products;
+     this.productService.getMyProducts().subscribe((products: IProduct[]) => {
+       this.products = products;
+       console.log(products);
+    });
+    //this.filteredProducts = this.products;
   }
 }

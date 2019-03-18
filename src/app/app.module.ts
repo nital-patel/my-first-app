@@ -24,7 +24,8 @@ import {ProductModule} from './products/product.module';
     FormsModule,
     HttpClientModule,
     LoginModule,
-    ProductModule
+    ProductModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
