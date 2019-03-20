@@ -35,10 +35,11 @@ export class ProductListComponent implements OnInit {
     this.showImage = !this.showImage;
   }
   ngOnInit(): void {
-     this.productService.getMyProducts().subscribe((products: IProduct[]) => {
+     this.productService.getMyProducts().subscribe(
+       (products: IProduct[]) => {
        this.products = products;
+       this.filteredProducts = this.products;
        console.log(products);
     });
-    //this.filteredProducts = this.products;
   }
 }

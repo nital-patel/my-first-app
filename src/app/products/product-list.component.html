@@ -1,7 +1,12 @@
 <div class="card">
-  <div class="card-header" style="color: #337AB7">
-    {{pageTitle}}
-  </div>
+  <nav class="navbar navbar-expand navbar-light bg-light">
+    <a class="navbar-brand">{{pageTitle}}</a>
+    <ul class="nav nav-pills">
+      <li><a class="nav-link" routerLink="/welcome">Home</a><li>
+      <li><a class="nav-link" routerLink="/products">Product List</a></li>
+    </ul>
+  </nav>
+  <div class="card-header" style="color: #337AB7"></div>
   <div class="card-body">
     <div class="row">
       <div class="col-md-2"></div>
@@ -12,7 +17,7 @@
     </div>
     <div class="row">
       <div class="col-md-6">
-        <h4>Filtered by: </h4>
+        <h4>Filtered by:</h4>
       </div>
     </div>
     <div class="table-responsive">
@@ -33,7 +38,7 @@
         </tr>
         </thead>
         <tbody>
-        <tr *ngFor='let product of  products'>
+        <tr *ngFor='let product of  filteredProducts'>
           <td>
             <img *ngIf="showImage"
                  [src]='product.imageUrl'
