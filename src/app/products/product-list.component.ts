@@ -8,11 +8,11 @@ import { ProductService } from '../services/product.service';
   styleUrls: ['./product-list.component.css'],
 })
 export class ProductListComponent implements OnInit {
-  pageTitle = 'Product List!';
   imageWidth = 50;
   imageMargin = 2;
   showImage = false;
   _listFilter: string;
+   pageTitle: string;
   get listFilter(): string {
     return this._listFilter;
   }
