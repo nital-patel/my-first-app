@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import {ActivatedRoute, Router} from '@angular/router';
 
 @Component({
   selector: 'app-welcome',
@@ -7,8 +6,7 @@ import {ActivatedRoute, Router} from '@angular/router';
   styleUrls: ['./welcome.component.css']
 })
 export class WelcomeComponent implements OnInit {
-  constructor(private route: ActivatedRoute,
-              private router: Router) { }
+  languages = ['English', 'Spanish', 'Other'];
   ngOnInit() {
   }
 
