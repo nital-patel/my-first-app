@@ -8,7 +8,8 @@ import {Employee} from '../models/employee.model';
 })
 export class WelcomeComponent implements OnInit {
   languages = ['English', 'Spanish', 'Other'];
-  model = new Employee('priti', 'patel', true, 'w2', 'English');
+  model = new Employee('priti', 'patel', true, 'w2', 'default');
+  hasPrimaryLanguageError = false;
   firstNameToUpperCase(value: string) {
     if (value.length > 0) {
     this.model.firstName = value.charAt(0).toUpperCase() + value.slice(1);
