@@ -11,6 +11,8 @@ import { StarComponent } from './products/shared/star.component';
 import { RouterModule } from '@angular/router';
 import { ProductDetailComponent } from './products/product-detail/product-detail.component';
 import { ProductdetailModule } from './products/product-detail/productdetail.module';
+import {WelcomeComponent} from './home/welcome.component';
+import {WelcomeModule} from './home/welcome.module';
 
 @NgModule({
   declarations: [
@@ -18,7 +20,8 @@ import { ProductdetailModule } from './products/product-detail/productdetail.mod
     ProductListComponent,
     LoginComponent,
     StarComponent,
-    ProductDetailComponent
+    ProductDetailComponent,
+    WelcomeComponent
   ],
   imports: [
     BrowserModule,
@@ -26,12 +29,13 @@ import { ProductdetailModule } from './products/product-detail/productdetail.mod
     FormsModule,
     LoginModule,
     HttpClientModule,
+    WelcomeModule,
     ProductdetailModule,
-    RouterModule.forRoot([
+      RouterModule.forRoot([
       {path: 'products', component: ProductListComponent},
       {path: 'products/:id', component: ProductDetailComponent},
-      {path: '', redirectTo: 'welcome', pathMatch: 'full'},
-      {path: '**', redirectTo: 'welcome', pathMatch: 'full'}
+      {path: 'login' , component: LoginComponent},
+      {path: 'home' , component: WelcomeComponent}
     ])
   ],
   providers: [],
