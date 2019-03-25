@@ -2,12 +2,17 @@
 <form>
   <div class="form-group">
     <label>First Name</label>
-    <input type="email" class="form-control" required name="firstname" ngModel>
+    <input type="text" class="form-control" required name="firstname"
+           [ngModel]="model.firstName"
+           (ngModelChange)="firstNameToUpperCase($event)">
   </div>
   <div class="form-group">
     <label>Last Name</label>
-    <input type="password" class="form-control" required name="firstname" ngModel>
+    <input type="text" class="form-control" required name="lastName"
+      [ngModel]="model.lastName"
+      (ngModelChange)="lastnameToUpperCase($event)">
   </div>
+  <!--
   <div class="form-group form-check">
     <input type="checkbox" name="is-full-time" ngModel class="form-check-input" id="exampleCheck1">
     <label class="form-check-label" for="exampleCheck1">Full Time Employee</label>
@@ -36,7 +41,8 @@
   <div class="form-group">
     <label>Date Hired</label>
     <input type="date" class="form-control">
-  </div>
+  </div>-->
   <button type="submit" class="btn btn-primary">ok</button>
 </form>
+  Model: {{model | json }}
 </div>
