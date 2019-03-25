@@ -34,10 +34,10 @@
 	 1099
    </label>
  </div>
-  <!--
  <div class="form-group">
    <label>Primary Language</label>
-   <select class="form-control" id="exampleFormControlSelect1">
+   <select class="form-control" name="primaryLanguage"
+   [(ngModel)]="model.primaryLanguage">
 	 <option *ngFor="let lang of languages">
 	   {{ lang }}
 	 </option>
@@ -46,8 +46,9 @@
  <div class="form-group">
    <label>Date Hired</label>
    <input type="date" class="form-control">
- </div>-->
+ </div>
   <button type="submit" class="btn btn-primary">ok</button>
 </form>
   Model: {{model | json }}
 </div>
+s
