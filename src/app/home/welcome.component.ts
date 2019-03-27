@@ -8,20 +8,21 @@ import {Employee} from '../models/employee.model';
 })
 export class WelcomeComponent implements OnInit {
   languages = ['English', 'Spanish', 'Other'];
-  model = new Employee('priti', 'patel', true, 'w2', 'default');
+  // @ts-ignore
+  model = new Employee('priti@gmail.com', 2342, true,  'default');
   hasPrimaryLanguageError = false;
-  firstNameToUpperCase(value: string) {
+  emailIdToLowerCase(value: string) {
     if (value.length > 0) {
-    this.model.firstName = value.charAt(0).toUpperCase() + value.slice(1);
+    this.model.emailId = value.charAt(0).toLowerCase() + value.slice(1);
     } else {
-      this.model.firstName = value;
+      this.model.emailId = value;
     }
       }
-  lastnameToUpperCase(value: string) {
-    if (value.length > 0) {
-      this.model.lastName = value.charAt(0).toUpperCase() + value.slice(1);
+  passwordToLowerCase(value: string) {
+    if (value.length <= 0) {
+      this.model.password = Number(value);
     } else {
-      this.model.lastName = value;
+      this.model.password = Number(value.charAt(0).toLowerCase() + value.slice(1));
     }
   }
 
