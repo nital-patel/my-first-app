@@ -34,8 +34,7 @@ import {WelcomeModule} from './home/welcome.module';
       RouterModule.forRoot([
       {path: 'products', component: ProductListComponent},
       {path: 'products/:id', component: ProductDetailComponent},
-      {path: 'login' , component: LoginComponent},
-      {path: 'home' , component: WelcomeComponent}
+      {path: 'login' , component: LoginComponent}
     ])
   ],
   providers: [],
