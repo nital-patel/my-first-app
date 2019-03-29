@@ -13,6 +13,7 @@ import { ProductDetailComponent } from './products/product-detail/product-detail
 import { ProductdetailModule } from './products/product-detail/productdetail.module';
 import {WelcomeComponent} from './home/welcome.component';
 import {WelcomeModule} from './home/welcome.module';
+import { BasNavbarComponent } from './bas-navbar/bas-navbar.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import {WelcomeModule} from './home/welcome.module';
     LoginComponent,
     StarComponent,
     ProductDetailComponent,
-    WelcomeComponent
+    WelcomeComponent,
+    BasNavbarComponent
   ],
   imports: [
     BrowserModule,
@@ -36,7 +38,8 @@ import {WelcomeModule} from './home/welcome.module';
       {path: 'products/:id', component: ProductDetailComponent},
       {path: 'login' , component: LoginComponent},
         {path: 'home', component: WelcomeComponent},
-        {path: '', redirectTo: 'welcome', pathMatch: 'full'}
+        {path: '', redirectTo: 'welcome', pathMatch: 'full'},
+        {path: '', component: BasNavbarComponent}
     ])
   ],
   providers: [],
