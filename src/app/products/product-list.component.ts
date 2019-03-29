@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { IProduct} from './product';
 import { ProductService } from '../services/product.service';
+import {UserService} from '../services/login.service';
 
 @Component({
   selector: 'app-products',
@@ -22,7 +23,8 @@ export class ProductListComponent implements OnInit {
   }
   filteredProducts: IProduct[];
   products: IProduct[] = [];
-  constructor(private productService: ProductService) {
+  constructor(private productService: ProductService,
+              private user: UserService) {
   }
   onRatingClicked(message: string): void {
     this.pageTitle = 'Product List: ' + message;
@@ -41,5 +43,8 @@ export class ProductListComponent implements OnInit {
        this.filteredProducts = this.products;
        console.log(products);
     });
+  }
+  logout() {
+    this.user.logout();
   }
 }

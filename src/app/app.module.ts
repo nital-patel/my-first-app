@@ -14,6 +14,7 @@ import { ProductdetailModule } from './products/product-detail/productdetail.mod
 import {WelcomeComponent} from './home/welcome.component';
 import {WelcomeModule} from './home/welcome.module';
 import { BasNavbarComponent } from './bas-navbar/bas-navbar.component';
+import {BasNavbarModule} from './bas-navbar/bas-navbar.module';
 
 @NgModule({
   declarations: [
@@ -31,6 +32,7 @@ import { BasNavbarComponent } from './bas-navbar/bas-navbar.component';
     FormsModule,
     LoginModule,
     HttpClientModule,
+    BasNavbarModule,
     WelcomeModule,
     ProductdetailModule,
       RouterModule.forRoot([

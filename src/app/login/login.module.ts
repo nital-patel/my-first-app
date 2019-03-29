@@ -12,7 +12,6 @@ import {LoginComponent} from './login.component';
     FormsModule,
     BrowserModule,
     RouterModule.forChild([
-      {path: 'login', component: LoginComponent}
     ])
   ],
   providers: [UserService]
