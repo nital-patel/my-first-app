@@ -1,6 +1,7 @@
 import {Component} from '@angular/core';
 import { User } from './login.user';
 import { UserService } from '../services/login.service';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -17,7 +18,8 @@ export class LoginComponent {
     emailID: null,
     password: null,
   };
-  constructor(private userService: UserService) {
+  constructor(private userService: UserService,
+              private router: Router) {
 
   }
   loginUser() {
@@ -26,6 +28,7 @@ export class LoginComponent {
         this.loginMessage = 'Login succesfully!';
         this.user = returnedUser[0];
         this.loginSucess = true;
+        this.router.navigate(['/products']);
       } else {
         this.loginMessage = 'Login Failed';
         this.loginSucess = false;

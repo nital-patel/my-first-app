@@ -9,8 +9,15 @@ import {Employee} from '../models/employee.model';
 export class WelcomeComponent implements OnInit {
   languages = ['English', 'Spanish', 'Other'];
   // @ts-ignore
-  model = new Employee('priti@gmail.com', 2342, true,  'default');
+  model = new Employee('priti', 'priti@gmail.com',  '12344' );
   hasPrimaryLanguageError = false;
+  userNameToLowerCase(value: string) {
+    if (value.length > 0) {
+      this.model.userName = value.charAt(0).toLowerCase() + value.slice(1);
+    } else {
+      this.model.userName = value;
+    }
+  }
   emailIdToLowerCase(value: string) {
     if (value.length > 0) {
     this.model.emailId = value.charAt(0).toLowerCase() + value.slice(1);
