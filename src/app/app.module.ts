@@ -37,11 +37,12 @@ import {BasNavbarModule} from './bas-navbar/bas-navbar.module';
     ProductdetailModule,
       RouterModule.forRoot([
       {path: 'products', component: ProductListComponent},
-      {path: 'products/:id', component: ProductDetailComponent},
+      {path: 'products/:id/edit', component: ProductDetailComponent},
       {path: 'login' , component: LoginComponent},
         {path: 'home', component: WelcomeComponent},
         {path: '', redirectTo: 'welcome', pathMatch: 'full'},
-        {path: '', component: BasNavbarComponent}
+        {path: '', component: BasNavbarComponent},
+
     ])
   ],
   providers: [],

@@ -45,6 +45,5 @@ export class ProductListComponent implements OnInit {
     });
   }
   logout() {
-    this.user.logout();
   }
 }
