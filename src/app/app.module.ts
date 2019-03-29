@@ -24,7 +24,7 @@ import {BasNavbarModule} from './bas-navbar/bas-navbar.module';
     StarComponent,
     ProductDetailComponent,
     WelcomeComponent,
-    BasNavbarComponent
+    BasNavbarComponent,
   ],
   imports: [
     BrowserModule,

@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {Employee} from '../models/employee.model';
+import { Welcome } from './welcome';
+import {FormControl, FormGroup} from '@angular/forms';
 
 @Component({
   selector: 'app-welcome',
@@ -7,32 +9,37 @@ import {Employee} from '../models/employee.model';
   styleUrls: ['./welcome.component.css']
 })
 export class WelcomeComponent implements OnInit {
-  languages = ['English', 'Spanish', 'Other'];
+  welcome = new Welcome();
+  welcomeForm: FormGroup;
   // @ts-ignore
-  model = new Employee('priti', 'priti@gmail.com',  '12344' );
-  hasPrimaryLanguageError = false;
-  userNameToLowerCase(value: string) {
+  model = new Employee('priti', 'patel',  'priti@gmail.com' );
+  firstNameIdToLowerCase(value: string) {
     if (value.length > 0) {
-      this.model.userName = value.charAt(0).toLowerCase() + value.slice(1);
+      this.model.firstName = value.charAt(0).toLowerCase() + value.slice(1);
     } else {
-      this.model.userName = value;
+      this.model.firstName = value;
     }
   }
-  emailIdToLowerCase(value: string) {
+  lastNameIdToLowerCase(value: string) {
     if (value.length > 0) {
-    this.model.emailId = value.charAt(0).toLowerCase() + value.slice(1);
+    this.model.lastName = value.charAt(0).toLowerCase() + value.slice(1);
     } else {
-      this.model.emailId = value;
+      this.model.lastName = value;
     }
       }
-  passwordToLowerCase(value: string) {
+  emailIdLowerCase(value: string) {
     if (value.length <= 0) {
-      this.model.password = Number(value);
+      this.model.email = (value);
     } else {
-      this.model.password = Number(value.charAt(0).toLowerCase() + value.slice(1));
+      this.model.email = (value.charAt(0).toLowerCase() + value.slice(1));
     }
   }
 
   ngOnInit(): void {
+    this.welcomeForm = new FormGroup({
+      firstName: new FormControl(),
+      lastName: new FormControl(),
+      email: new FormControl()
+    });
   }
     }
