@@ -14,7 +14,7 @@ export class LoginComponent {
   loginSucess = false;
   user: User = {
     id: 0,
-    name: null,
+    userName: null,
     emailID: null,
     password: null,
   };
@@ -37,3 +37,4 @@ export class LoginComponent {
   }
 
 }
+

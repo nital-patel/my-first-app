@@ -1,0 +1,48 @@
+<div class="main">
+  <div class="container">
+    <div class="form-group" [class.has-error]="userName.invalid && userName.touched">
+      <form (ngSubmit)="registerUser(signUpForm)" #signUpForm="ngForm">
+        <label class="control-label">User Name</label>
+        <label>
+          <input pattern=".....+" type="text" class="form-control" required name="name" #userName="ngModel"
+                 [ngModel]="user.userName"
+                 (ngModelChange)="userNameToLowerCase($event)">
+        </label>
+        <div *ngIf="userName.invalid && userName.touched" class="alert alert-danger">
+          user name is requried, and must be at least 10 characters.
+        </div>
+        <div class="form-group" [class.has-error]="emailId.invalid && emailId.touched">
+          <label class="control-label">Email Id</label>
+          <label>
+            <input #emailId="ngModel" (ngModelChange)="emailIdToLowerCase($event)" [ngModel]="user.emailId" class="form-control" name="emailId" pattern="....+" required
+                   type="text">
+          </label>
+          <div *ngIf="emailId.invalid && emailId.touched" class="alert alert-danger">
+            Emailid id is requried, and must be at least 10 characters.
+          </div>
+        </div>
+        <div class="form-group" [class.has-error]="password.invalid && password.touched">
+          <label class="control-label">Password</label>
+          <label>
+            <input #password="ngModel" (ngModelChange)="passwordLowerCase($event)" [ngModel]="user.password"
+                   class="form-control" name="password" pattern="......+"
+                   required
+                   type="password">
+          </label>
+          <div *ngIf="password.invalid && password.touched" class="alert alert-danger">
+            password is requried, and must be at least 5 characters.
+          </div>
+          <div class="form-group row mb-2">
+            <div class="offset-md-2 col-md-4">
+              <button (click)="registerUser(signUpForm)" [ngClass]="signUpForm.valid ? 'btn btn-success' : 'btn btn-danger'"
+                      type="submit">Save</button>
+            </div>
+          </div>
+        </div>
+      </form>
+      Model: {{model | json }}
+      {{signUpForm.valid}}
+    </div>
+  </div>
+</div>
+

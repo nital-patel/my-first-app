@@ -9,8 +9,9 @@ const JSON_SERVICE = 'http://localhost:3000';
 export class UserService {
 
   constructor(private http: HttpClient) {}
+
   validateUser(user: User): Observable<User[]> {
-    const parameter = 'emailID=' + user.emailID + '&password=' + user.password;
+    const parameter = 'userName=' + user.userName + 'emailId=' + user.emailId + 'password=' + user.password;
     return this.http.get<User[]>(JSON_SERVICE + '/user?' + parameter);
   }
 }

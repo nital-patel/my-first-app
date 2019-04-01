@@ -11,10 +11,9 @@ import { StarComponent } from './products/shared/star.component';
 import { RouterModule } from '@angular/router';
 import { ProductDetailComponent } from './products/product-detail/product-detail.component';
 import { ProductdetailModule } from './products/product-detail/productdetail.module';
-import {WelcomeComponent} from './home/welcome.component';
-import {WelcomeModule} from './home/welcome.module';
 import { BasNavbarComponent } from './bas-navbar/bas-navbar.component';
 import {BasNavbarModule} from './bas-navbar/bas-navbar.module';
+import { SignupComponent } from './signup/signup.component';
 
 @NgModule({
   declarations: [
@@ -23,8 +22,8 @@ import {BasNavbarModule} from './bas-navbar/bas-navbar.module';
     LoginComponent,
     StarComponent,
     ProductDetailComponent,
-    WelcomeComponent,
     BasNavbarComponent,
+    SignupComponent
   ],
   imports: [
     BrowserModule,
@@ -33,13 +32,12 @@ import {BasNavbarModule} from './bas-navbar/bas-navbar.module';
     LoginModule,
     HttpClientModule,
     BasNavbarModule,
-    WelcomeModule,
     ProductdetailModule,
       RouterModule.forRoot([
       {path: 'products', component: ProductListComponent},
       {path: 'products/:id/edit', component: ProductDetailComponent},
       {path: 'login' , component: LoginComponent},
-        {path: 'home', component: WelcomeComponent},
+        {path: 'signup', component: SignupComponent},
         {path: '', redirectTo: 'welcome', pathMatch: 'full'},
         {path: '', component: BasNavbarComponent},
 
