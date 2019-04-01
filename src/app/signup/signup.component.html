@@ -1,11 +1,11 @@
 <div class="main">
   <div class="container">
-    <div class="form-group" [class.has-error]="userName.invalid && userName.touched">
-      <form (ngSubmit)="registerUser(userForm)" #userForm="ngForm">
+    <form (ngSubmit)="addUser(userForm.value)" #userForm="ngForm">
+      <div class="form-group" [class.has-error]="userName.invalid && userName.touched">
         <label class="control-label">User Name</label>
         <label>
           <input pattern=".....+" type="text" class="form-control" required name="name" #userName="ngModel"
-                 [ngModel]="user.userName"
+                 [ngModel]="userForm.userName"
                  (ngModelChange)="userNameToLowerCase($event)">
         </label>
         <div *ngIf="userName.invalid && userName.touched" class="alert alert-danger">
@@ -14,7 +14,7 @@
         <div class="form-group" [class.has-error]="emailId.invalid && emailId.touched">
           <label class="control-label">Email Id</label>
           <label>
-            <input #emailId="ngModel" (ngModelChange)="emailIdToLowerCase($event)" [ngModel]="user.emailId" class="form-control" name="emailId" pattern="....+" required
+            <input #emailId="ngModel" (ngModelChange)="emailIdToLowerCase($event)" [ngModel]="userForm.emailId" class="form-control" name="emailId" pattern="....+" required
                    type="text">
           </label>
           <div *ngIf="emailId.invalid && emailId.touched" class="alert alert-danger">
@@ -24,7 +24,7 @@
         <div class="form-group" [class.has-error]="password.invalid && password.touched">
           <label class="control-label">Password</label>
           <label>
-            <input #password="ngModel" (ngModelChange)="passwordLowerCase($event)" [ngModel]="user.password"
+            <input #password="ngModel" (ngModelChange)="passwordLowerCase($event)" [ngModel]="userForm.password"
                    class="form-control" name="password" pattern="......+"
                    required
                    type="password">
@@ -34,15 +34,15 @@
           </div>
           <div class="form-group row mb-2">
             <div class="offset-md-2 col-md-4">
-              <button (click)="registerUser(userForm)" [ngClass]="userForm.valid ? 'btn btn-success' : 'btn btn-danger'"
-                      type="submit">Save</button>
+              <button type="submit">Save</button>
             </div>
           </div>
         </div>
-      </form>
-      Model: {{user | json }}
-      {{userForm.valid}}
-    </div>
+
+        Model: {{user | json }}
+        {{userForm.valid}}
+      </div>
+    </form>
   </div>
 </div>
 

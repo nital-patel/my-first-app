@@ -4,7 +4,6 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ProductListComponent } from './products/product-list.component';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
-import { LoginComponent } from './login/login.component';
 import { HttpClientModule } from '@angular/common/http';
 import { LoginModule } from './login/login.module';
 import { StarComponent } from './products/shared/star.component';
@@ -20,7 +19,6 @@ import {ReactiveErrors} from '@angular/forms/src/directives/reactive_errors';
   declarations: [
     AppComponent,
     ProductListComponent,
-    LoginComponent,
     StarComponent,
     ProductDetailComponent,
     BasNavbarComponent,
@@ -38,7 +36,6 @@ import {ReactiveErrors} from '@angular/forms/src/directives/reactive_errors';
       RouterModule.forRoot([
       {path: 'products', component: ProductListComponent},
       {path: 'products/:id/edit', component: ProductDetailComponent},
-      {path: 'login' , component: LoginComponent},
         {path: 'signup', component: SignupComponent},
         {path: '', redirectTo: 'welcome', pathMatch: 'full'},
         {path: '', component: BasNavbarComponent},

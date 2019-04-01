@@ -1,7 +1,6 @@
 import {NgModule} from '@angular/core';
 import {FormsModule} from '@angular/forms';
 import {BrowserModule} from '@angular/platform-browser';
-import {UserService} from '../services/login.service';
 
 @NgModule({
   declarations: [
@@ -10,7 +9,7 @@ import {UserService} from '../services/login.service';
     FormsModule,
     BrowserModule,
   ],
-  providers: [UserService]
+  providers: []
 })
 export class WelcomeModule {
 

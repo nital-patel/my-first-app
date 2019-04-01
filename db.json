@@ -2,15 +2,25 @@
   "User": [
     {
       "id": 1,
-      "name": "niti",
-      "email": "niti@gmail.com",
+      "userName": "niti",
+      "emailId": "niti@gmail.com",
       "password": "angular"
     },
     {
       "id": 2,
-      "name": "disha",
-      "email": "disha@gmail.com",
+      "userName": "disha",
+      "emailId": "disha@gmail.com",
       "password": "atit"
+    },
+    {
+      "id": 17,
+      "emailId": "priti@gmail.com",
+      "password": "sadhit"
+    },
+    {
+      "id": 18,
+      "emailId": "priti@gmail.com",
+      "password": "sadhit"
     }
   ],
   "IProduct": [
@@ -36,4 +46,3 @@
     }
   ]
 }
-

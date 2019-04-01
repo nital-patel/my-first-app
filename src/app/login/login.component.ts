@@ -1,6 +1,6 @@
 import {Component} from '@angular/core';
 import { User } from './login.user';
-import { UserService } from '../services/login.service';
+import { LoginService } from '../services/login.service';
 import {Router} from '@angular/router';
 
 @Component({
@@ -18,12 +18,12 @@ export class LoginComponent {
     emailId: null,
     password: null,
   };
-  constructor(private userService: UserService,
+  constructor(private loginService: LoginService,
               private router: Router) {
 
   }
   loginUser() {
-    this.userService.validateUser(this.user).subscribe((returnedUser: User[]) => {
+    this.loginService.validateUser(this.user).subscribe((returnedUser: User[]) => {
       if (returnedUser != null && returnedUser.length !== 0) {
         this.loginMessage = 'Login succesfully!';
         this.user = returnedUser[0];
