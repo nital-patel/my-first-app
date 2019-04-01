@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {UserService} from '../services/login.service';
 import { Router} from '@angular/router';
 import { User} from '../login/login.user';
-import {FormControl, FormGroup} from '@angular/forms';
+import {FormControl, FormGroup, NgForm} from '@angular/forms';
 import {Employee} from '../models/employee.model';
 
 @Component({
@@ -15,40 +15,54 @@ export class SignupComponent implements OnInit {
   constructor(private userService: UserService,
               private router: Router) {
   }
-  user = new User();
+  // @ts-ignore
+  user: User = {
+    userName: null,
+    emailId: null,
+    password: null,
+  };
   userForm: FormGroup;
-  model = new Employee('null', 'null',  'null' );
   userNameToLowerCase(value: string) {
     if (value.length > 0) {
-      this.model.userName = value.charAt(0).toLowerCase() + value.slice(1);
+      this.user.userName = value.charAt(0).toLowerCase() + value.slice(1);
     } else {
-      this.model.userName = value;
+      this.user.userName = value;
     }
   }
   emailIdToLowerCase(value: string) {
     if (value.length > 0) {
-      this.model.emailId = value.charAt(0).toLowerCase() + value.slice(1);
+      this.user.emailId = value.charAt(0).toLowerCase() + value.slice(1);
     } else {
-      this.model.emailId = value;
+      this.user.emailId = value;
     }
   }
   passwordLowerCase(value: string) {
     if (value.length > 0) {
-      this.model.password = (value);
+      this.user.password = (value);
     } else {
-      this.model.password = (value.charAt(0).toLowerCase() + value.slice(1));
+      this.user.password = (value.charAt(0).toLowerCase() + value.slice(1));
     }
   }
 
   ngOnInit(): void {
     this.userForm = new FormGroup({
+      id: new FormControl(),
       userName: new FormControl(),
       emailId: new FormControl(),
       password: new FormControl()
     });
   }
-  registerUser(signUpForm) {
-    console.log(signUpForm);
+  populateTestData(): void {
+    this.userForm.patchValue({
+      id: '1',
+      userName: 'priti',
+      emailid: 'priti@gmail.com',
+      password: 'sadhit'
+    });
+  }
+  registerUser(userForm: NgForm) {
+    console.log(userForm.form);
+    console.log('Saved: ' + JSON.stringify(userForm.value));
   }
 }
 

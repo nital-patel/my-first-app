@@ -12,10 +12,10 @@ import {Router} from '@angular/router';
 export class LoginComponent {
   loginMessage: string = null;
   loginSucess = false;
+// @ts-ignore
   user: User = {
-    id: 0,
     userName: null,
-    emailID: null,
+    emailId: null,
     password: null,
   };
   constructor(private userService: UserService,

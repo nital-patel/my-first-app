@@ -9,7 +9,7 @@
     </div>
     <div class="col-sm-3 my-1">
       <label class="sr-only" for="inlineFormInputName">Email address </label>
-      <input type="email" #emailRef [(ngModel)]="user.emailID"   class="form-control" id="inlineFormInputName" placeholder="Email">
+      <input type="email" #emailRef [(ngModel)]="user.emailId"   class="form-control" id="inlineFormInputName" placeholder="Email">
     </div>
     <div class="col-sm-3 my-1">
       <label class="sr-only" for="inlineFormInputGroupUsername">Password</label>
@@ -28,7 +28,7 @@
     </div>
     <div class="col-auto my-1">
       <button type="submit"  class="btn btn-primary" (click)="loginUser()">Login</button>
-      <button type="submit"  style="margin-left: 5px; background-color: green; color: white"><a class="nav-link" style="color: #fff" routerLink="/home">Register</a></button>
+      <button type="submit"  style="margin-left: 5px; background-color: green; color: white"><a class="nav-link" style="color: #fff" routerLink="/signup">Register</a></button>
     </div>
 
   </div>

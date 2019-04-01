@@ -3,7 +3,7 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ProductListComponent } from './products/product-list.component';
-import { FormsModule } from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { LoginComponent } from './login/login.component';
 import { HttpClientModule } from '@angular/common/http';
 import { LoginModule } from './login/login.module';
@@ -14,6 +14,7 @@ import { ProductdetailModule } from './products/product-detail/productdetail.mod
 import { BasNavbarComponent } from './bas-navbar/bas-navbar.component';
 import {BasNavbarModule} from './bas-navbar/bas-navbar.module';
 import { SignupComponent } from './signup/signup.component';
+import {ReactiveErrors} from '@angular/forms/src/directives/reactive_errors';
 
 @NgModule({
   declarations: [
@@ -32,6 +33,7 @@ import { SignupComponent } from './signup/signup.component';
     LoginModule,
     HttpClientModule,
     BasNavbarModule,
+    ReactiveFormsModule,
     ProductdetailModule,
       RouterModule.forRoot([
       {path: 'products', component: ProductListComponent},
