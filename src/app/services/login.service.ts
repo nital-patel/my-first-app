@@ -12,9 +12,9 @@ export class LoginService {
 
   validateUser(user: User): Observable<User[]> {
     const parameter = 'userName=' + user.userName + 'emailId=' + user.emailId + 'password=' + user.password;
-    return this.http.get<User[]>(JSON_SERVICE + '/User?' + parameter);
+    return this.http.get<User[]>(JSON_SERVICE + '/user?' + parameter);
   }
   addNewUser(user: User): Observable<User> {
-    return this.http.post<User>(JSON_SERVICE + '/User', user);
+    return this.http.post<User>(JSON_SERVICE + '/user', user);
   }
 }

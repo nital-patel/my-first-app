@@ -26,8 +26,7 @@ export class SignupComponent implements OnInit {
   // @ts-ignore
   userForm: FormGroup;
   addUser(userForm) {
-    console.log(this.userForm);
-    this.newUser.id = userForm.id + 1;
+    console.log(userForm);
     this.newUser.userName = userForm.userName;
     this.newUser.emailId = userForm.emailId;
     this.newUser.password = userForm.password;
@@ -45,7 +44,9 @@ export class SignupComponent implements OnInit {
   }
   userNameToLowerCase(value: string) {
     if (value.length > 0) {
+      console.log(value);
       this.user.userName = value.charAt(0).toLowerCase() + value.slice(1);
+      console.log(value.charAt(0).toLowerCase() + value.slice(1));
     } else {
       this.user.userName = value;
     }
@@ -66,12 +67,12 @@ export class SignupComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.userForm = new FormGroup({
-      id: new FormControl(),
-      userName: new FormControl(),
-      emailId: new FormControl(),
-      password: new FormControl()
-    });
+    // this.userForm = new FormGroup({
+    //   id: new FormControl(),
+    //   userName: new FormControl(),
+    //   emailId: new FormControl(),
+    //   password: new FormControl()
+    // });
   }
 }
 

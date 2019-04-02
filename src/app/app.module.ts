@@ -13,7 +13,7 @@ import { ProductdetailModule } from './products/product-detail/productdetail.mod
 import { BasNavbarComponent } from './bas-navbar/bas-navbar.component';
 import {BasNavbarModule} from './bas-navbar/bas-navbar.module';
 import { SignupComponent } from './signup/signup.component';
-import {ReactiveErrors} from '@angular/forms/src/directives/reactive_errors';
+import {LoginService} from './services/login.service';
 
 @NgModule({
   declarations: [
@@ -37,12 +37,10 @@ import {ReactiveErrors} from '@angular/forms/src/directives/reactive_errors';
       {path: 'products', component: ProductListComponent},
       {path: 'products/:id/edit', component: ProductDetailComponent},
         {path: 'signup', component: SignupComponent},
-        {path: '', redirectTo: 'welcome', pathMatch: 'full'},
         {path: '', component: BasNavbarComponent},
-
     ])
   ],
-  providers: [],
+  providers: [LoginService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
