@@ -11,7 +11,7 @@ export class LoginService {
   constructor(private http: HttpClient) {}
 
   validateUser(user: User): Observable<User[]> {
-    const parameter = 'userName=' + user.userName + 'emailId=' + user.emailId + 'password=' + user.password;
+    const parameter = 'emailId=' + user.emailId + '&password=' + user.password;
     return this.http.get<User[]>(JSON_SERVICE + '/user?' + parameter);
   }
   addNewUser(user: User): Observable<User> {

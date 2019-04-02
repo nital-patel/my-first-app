@@ -1,7 +1,7 @@
 import {Component} from '@angular/core';
 import { User } from './login.user';
 import { LoginService } from '../services/login.service';
-import {Router} from '@angular/router';
+import {ActivatedRoute, Router} from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -12,13 +12,14 @@ import {Router} from '@angular/router';
 export class LoginComponent {
   loginMessage: string = null;
   loginSucess = false;
-// @ts-ignore
   user: User = {
+    id: 0,
     userName: null,
     emailId: null,
     password: null,
   };
   constructor(private loginService: LoginService,
+              private routingService: ActivatedRoute,
               private router: Router) {
 
   }
