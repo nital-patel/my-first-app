@@ -92,6 +92,12 @@
       "userName": "priti",
       "emailId": "priti@gmail.com",
       "password": "dasnadas"
+    },
+    {
+      "id": 18,
+      "userName": "rimpal",
+      "emailId": "rimpal@gmail.com",
+      "password": "angular"
     }
   ],
   "IProduct": [

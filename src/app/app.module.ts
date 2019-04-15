@@ -13,7 +13,7 @@ import { ProductdetailModule } from './products/product-detail/productdetail.mod
 import { BasNavbarComponent } from './bas-navbar/bas-navbar.component';
 import {BasNavbarModule} from './bas-navbar/bas-navbar.module';
 import { SignupComponent } from './signup/signup.component';
-import {LoginService} from './services/login.service';
+import {ProductDetailGuard} from './products/product-detail.guard';
 
 @NgModule({
   declarations: [
@@ -35,12 +35,13 @@ import {LoginService} from './services/login.service';
     ProductdetailModule,
       RouterModule.forRoot([
       {path: 'products', component: ProductListComponent},
-      {path: 'products/:id/edit', component: ProductDetailComponent},
+      {path: 'products/:id/edit', canActivate: [ProductDetailGuard],
+        component: ProductDetailComponent},
         {path: 'signup', component: SignupComponent},
         {path: '', component: BasNavbarComponent},
     ])
   ],
-  providers: [LoginService],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
