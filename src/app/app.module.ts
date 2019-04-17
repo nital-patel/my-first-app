@@ -14,6 +14,7 @@ import { BasNavbarComponent } from './bas-navbar/bas-navbar.component';
 import {BasNavbarModule} from './bas-navbar/bas-navbar.module';
 import { SignupComponent } from './signup/signup.component';
 import {ProductDetailGuard} from './products/product-detail.guard';
+import { WelcomeComponent } from './welcome/welcome.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import {ProductDetailGuard} from './products/product-detail.guard';
     StarComponent,
     ProductDetailComponent,
     BasNavbarComponent,
-    SignupComponent
+    SignupComponent,
+    WelcomeComponent
   ],
   imports: [
     BrowserModule,
@@ -39,6 +41,7 @@ import {ProductDetailGuard} from './products/product-detail.guard';
         component: ProductDetailComponent},
         {path: 'signup', component: SignupComponent},
         {path: '', component: BasNavbarComponent},
+        {path: 'home', component: WelcomeComponent}
     ])
   ],
   providers: [],
