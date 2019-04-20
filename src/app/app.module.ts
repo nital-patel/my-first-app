@@ -44,7 +44,7 @@ import {SpringbootService} from './spingboot/springboot.service';
         component: ProductDetailComponent},
         {path: 'signup', component: SignupComponent},
         {path: '', component: BasNavbarComponent},
-        {path: 'home', component: WelcomeComponent}
+        {path: 'home', component: WelcomeComponent},
     ])
   ],
   providers: [SpringbootService],

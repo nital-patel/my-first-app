@@ -1,13 +1,24 @@
 export class User {
   id: number;
-  userName: string;
+  firstName: string;
+  lastName: string;
   emailId: string;
   password: string;
+  streetAddress: string;
+  addressType: 'home';
+  city: string;
 
-  constructor(myId: number, userName: string, emailid: string, password: string) {
+
+    constructor(myId: number,  firstName: string, lastName: string,
+                emailid: string, password: string, streetAddress: string, addressType: 'home', city: string) {
     this.id = myId;
-    this.userName = userName;
+    this.firstName = firstName;
+    this.lastName = lastName;
     this.emailId = emailid;
     this.password = password;
+    this.streetAddress = streetAddress;
+    this.addressType = addressType;
+    this.city = city;
+
   }
 }

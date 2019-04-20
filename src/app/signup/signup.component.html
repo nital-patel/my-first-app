@@ -1,53 +1,244 @@
-<div style="border: 3px solid #dddddd; width: 100%;">
+<div class="card">
+  <div class="card-header">
+    Sign Up!
+  </div>
+
   <div class="card-body">
-    <form (ngSubmit)="addUser(userForm.value)" #userForm="ngForm">
-      <div class="alert alert-success" [class.has-error]="userName.invalid && userName.touched">
-        <label class="control-label">User Name</label>
-        <label>
-          <input #userName="ngModel" (ngModelChange)="userNameToLowerCase($event)"
-                 [ngModel]="userForm.userName"
-                 class="form-control" name="userName"  pattern=".....+"
+    <form novalidate
+          (ngSubmit)="addUser(userForm)"
+          #userForm="ngForm">
+
+      <div class="form-group row mb-2">
+        <label class="col-md-2 col-form-label"
+               for="firstNameId">First Name</label>
+        <div class="col-md-8">
+          <input class="form-control"
+                 id="firstNameId"
                  type="text"
-                 required>
-        </label>
-        <div *ngIf="userName.invalid && userName.touched" class="alert alert-danger">
-          user name is requried, and must be at least 10 characters.
+                 placeholder="First Name (required)"
+                 required
+                 minlength="3"
+                 [(ngModel)]=userForm.firstName
+                 name="firstName"
+                 #firstNameVar="ngModel"
+                 [ngClass]="{'is-invalid': (firstNameVar.touched || firstNameVar.dirty) && !firstNameVar.valid }" />
+          <span class="invalid-feedback">
+            <span *ngIf="firstNameVar.errors?.required">
+              Please enter your first name.
+            </span>
+            <span *ngIf="firstNameVar.errors?.minlength">
+              The first name must be longer than 3 characters.
+            </span>
+          </span>
         </div>
-        <div class="form-group" [class.has-error]="emailId.invalid && emailId.touched">
-          <label class="control-label">Email Id</label>
-          <label>
-            <input #emailId="ngModel" (ngModelChange)="emailIdToLowerCase($event)"
-                   [ngModel]="userForm.emailId"
-                   class="form-control" name="emailId" pattern="....+"
-                   type="text"
-                   required>
-          </label>
-          <div *ngIf="emailId.invalid && emailId.touched" class="alert alert-danger">
-            Emailid id is requried, and must be at least 10 characters.
+      </div>
+
+      <div class="form-group row mb-2">
+        <label class="col-md-2 col-form-label"
+               for="lastNameId">Last Name</label>
+        <div class="col-md-8">
+          <input class="form-control"
+                 id="lastNameId"
+                 type="text"
+                 placeholder="Last Name (required)"
+                 required
+                 minlength="3"
+                 [(ngModel)]=userForm.lastName
+                 name="lastName"
+                 #lastNameVar="ngModel"
+                 [ngClass]="{'is-invalid': (lastNameVar.touched || lastNameVar.dirty) && !lastNameVar.valid }" />
+          <span class="invalid-feedback">
+            <span *ngIf="lastNameVar.errors?.required">
+              Please enter your last name.
+            </span>
+            <span *ngIf="lastNameVar.errors?.minlength">
+              The last name must be longer than 3 characters.
+            </span>
+          </span>
+        </div>
+      </div>
+
+      <div class="form-group row mb-2">
+        <label class="col-md-2 col-form-label"
+               for="emailId">Email</label>
+        <div class="col-md-8">
+          <input class="form-control"
+                 id="emailId"
+                 type="text"
+                 placeholder="Email (required)"
+                 required
+                 minlength="3"
+                 [(ngModel)]=userForm.emailId
+                 name="emailId"
+                 #emailIdVar="ngModel"
+                 [ngClass]="{'is-invalid': (emailIdVar.touched || emailIdVar.dirty) && !emailIdVar.valid }" />
+          <span class="invalid-feedback">
+            <span *ngIf="emailIdVar.errors?.required">
+              Please enter your emailId.
+            </span>
+            <span *ngIf="emailIdVar.errors?.minlength">
+              The last name must be longer than 20 characters.
+            </span>
+          </span>
+        </div>
+      </div>
+
+      <div class="form-group row mb-2">
+        <label class="col-md-2 col-form-label"
+               for="password">Password</label>
+        <div class="col-md-8">
+          <input class="form-control"
+                 id="password"
+                 type="text"
+                 placeholder="password (required)"
+                 required
+                 minlength="3"
+                 [(ngModel)]=userForm.password
+                 name="password"
+                 #passwordVar="ngModel"
+                 [ngClass]="{'is-invalid': (passwordVar.touched || passwordVar.dirty) && !passwordVar.valid }" />
+          <span class="invalid-feedback">
+            <span *ngIf="passwordVar.errors?.required">
+              Please enter your password.
+            </span>
+            <span *ngIf="passwordVar.errors?.minlength">
+              The password must be longer than 5 characters.
+            </span>
+          </span>
+        </div>
+      </div>
+
+      <div class="form-group row mb-2">
+        <div class="col-md-8">
+          <div class="form-check">
+            <label class="form-check-label">
+              <input class="form-check-input"
+                     id="sendCatalogId"
+                     type="checkbox"
+                     [(ngModel)]="userForm.sendCatalog"
+                     name="sendCatalog"> Send me your catalog
+            </label>
           </div>
         </div>
-        <div class="form-group" [class.has-error]="password.invalid && password.touched">
-          <label class="control-label">Password</label>
-          <label>
-            <input #password="ngModel" (ngModelChange)="passwordLowerCase($event)"
-                   [ngModel]="userForm.password"
-                   class="form-control" name="password" pattern="......+"
-                   required
-                   type="password">
-          </label>
-          <div *ngIf="password.invalid && password.touched" class="alert alert-danger">
-            password is requried, and must be at least 5 characters.
-          </div>
-          <div class="form-group row mb-2">
-            <div class="offset-md-2 col-md-4">
-              <button type="submit">Save</button>
+      </div>
+
+      <div *ngIf="userForm.sendCatalog">
+        <div class="form-group row mb-2">
+          <label class="col-md-2 col-form-label pt-0" for="addressType1Id">Address Type</label>
+          <div class="col-md-8">
+            <div class="form-check form-check-inline">
+              <label class="form-check-label">
+                <input class="form-check-input"
+                       type="radio"
+                       value="home"
+                       [(ngModel)]="userForm.addressType"
+                       name="addressType"> Home
+              </label>
+            </div>
+            <div class="form-check form-check-inline">
+              <label class="form-check-label">
+                <input class="form-check-input"
+                       type="radio"
+                       value="work"
+                       [(ngModel)]="userForm.addressType"
+                       name="addressType"> Work
+              </label>
+            </div>
+            <div class="form-check form-check-inline">
+              <label class="form-check-label">
+                <input class="form-check-input"
+                       id="addressType1Id"
+                       type="radio"
+                       value="other"
+                       [(ngModel)]="userForm.addressType"
+                       name="addressType"> Other
+              </label>
             </div>
           </div>
         </div>
-        Model: {{user | json }}
-        {{userForm.valid}}
+
+        <div class="form-group row mb-2">
+          <label class="col-md-2 col-form-label"
+                 for="streetAddress">Street Address 1</label>
+          <div class="col-md-8">
+            <input class="form-control"
+                   id="streetAddress"
+                   type="text"
+                   name="streetAddress"
+                   placeholder="Street address"
+                   [(ngModel)]="userForm.streetAddress"
+                   #street1IdVar="ngModel"
+                   name="streetAddress"
+                   [ngClass]="{'is-invalid': (street1IdVar.touched || street1IdVar.dirty) && !street1IdVar.valid }" />
+            <span class="invalid-feedback">
+            <span *ngIf="street1IdVar.errors?.required">
+              Please enter your password.
+            </span>
+            <span *ngIf="street1IdVar.errors?.minlength">
+              The password must be longer than 20 characters.
+            </span>
+          </span>
+          </div>
+        </div>
+
+        <div class="form-group row mb-2">
+          <label class="col-md-2 col-form-label"
+                 for="city">City, State, Zip Code</label>
+          <div class="col-md-3">
+            <input class="form-control"
+                   id="city"
+                   type="text"
+                   placeholder="City"
+                   [(ngModel)]="userForm.city"
+                   #cityVar="ngModel"
+                   name="city"
+                   [ngClass]="{'is-invalid': (cityVar.touched || cityVar.dirty) && !cityVar.valid }" />
+          </div>
+          <div class="col-md-3">
+            <select class="form-control"
+                    id="stateId"
+                    [(ngModel)]="userForm.state"
+                    name="state">
+              <option value=""
+                      disabled
+                      selected
+                      hidden>Select a State...</option>
+              <option value="AL">Alabama</option>
+              <option value="AK">Alaska</option>
+              <option value="AZ">Arizona</option>
+              <option value="AR">Arkansas</option>
+              <option value="CA">California</option>
+              <option value="CO">Colorado</option>
+              <option value="WI">Wisconsin</option>
+              <option value="WY">Wyoming</option>
+            </select>
+          </div>
+          <div class="col-md-2">
+            <input class="form-control"
+                   id="zipId"
+                   type="number"
+                   placeholder="Zip Code"
+                   [(ngModel)]="userForm.zip"
+                   name="zip">
+          </div>
+        </div>
+      </div>
+
+      <div class="form-group row mb-2">
+        <div class="offset-md-2 col-md-4">
+          <button class="btn btn-primary mr-3"
+                  type="submit"
+                  style="width:80px"
+                  [title]="userForm.valid ? 'Save your entered data' : 'Disabled until the form data is valid'"
+                  [disabled]="!userForm.valid">
+            Save
+          </button>
+        </div>
       </div>
     </form>
   </div>
 </div>
-
+<br>Dirty: {{ userForm.dirty }}
+<br>Touched: {{ userForm.touched }}
+<br>Valid: {{ userForm.valid }}
+<br>Value: {{ userForm.value | json }}

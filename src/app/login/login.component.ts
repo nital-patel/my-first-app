@@ -14,7 +14,6 @@ export class LoginComponent {
   loginSucess = false;
   user: User = {
     id: 0,
-    userName: null,
     emailId: null,
     password: null,
   };

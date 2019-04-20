@@ -15,21 +15,30 @@ export class SignupComponent implements OnInit {
               private router: Router) {
   }
   myUsers: User[] = [];
-  newUser: User = new User(0, 'null', 'null', 'null');
+  newUser: User = new User(0,  'null', 'null', 'null', 'null ', 'null', 'home', 'null');
   // @ts-ignore
   user: User = {
     id: 0,
-    userName: null,
+    firstName: null,
+    lastName: null,
     emailId: null,
     password: null,
+    streetAddress: null,
+    addressType: 'home',
+    city: null,
+
   };
   // @ts-ignore
   userForm: FormGroup;
   addUser(userForm) {
     console.log(userForm);
-    this.newUser.userName = userForm.userName;
+    this.newUser.firstName = userForm.firstName;
+    this.newUser.lastName = userForm.lastName;
     this.newUser.emailId = userForm.emailId;
     this.newUser.password = userForm.password;
+    this.newUser.streetAddress = userForm.streetAddress;
+    this.newUser.addressType = this.user.addressType;
+    this.newUser.city = this.user.city;
     this.loginService.addNewUser(this.newUser).subscribe(
       (addedUser: User) => {
         this.myUsers.push(addedUser);
@@ -42,30 +51,6 @@ export class SignupComponent implements OnInit {
       }
     );
   }
-  userNameToLowerCase(value: string) {
-    if (value.length > 0) {
-      console.log(value);
-      this.user.userName = value.charAt(0).toLowerCase() + value.slice(1);
-      console.log(value.charAt(0).toLowerCase() + value.slice(1));
-    } else {
-      this.user.userName = value;
-    }
-  }
-  emailIdToLowerCase(value: string) {
-    if (value.length > 0) {
-      this.user.emailId = value.charAt(0).toLowerCase() + value.slice(1);
-    } else {
-      this.user.emailId = value;
-    }
-  }
-  passwordLowerCase(value: string) {
-    if (value.length > 0) {
-      this.user.password = (value);
-    } else {
-      this.user.password = (value.charAt(0).toLowerCase() + value.slice(1));
-    }
-  }
-
   ngOnInit(): void {
     // this.userForm = new FormGroup({
     //   id: new FormControl(),

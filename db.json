@@ -2,102 +2,59 @@
   "User": [
     {
       "id": 1,
-      "userName": "niti",
+      "firstName": "niti",
+      "lastName": "patel",
       "emailId": "niti@gmail.com",
       "password": "angular"
     },
     {
       "id": 2,
-      "userName": "disha",
-      "emailId": "disha@gmail.com",
-      "password": "atit"
+      "firstName": "Nital",
+      "lastName": "Patel",
+      "emailId": "mak8patel@yahoo.co.in",
+      "password": "dasna",
+      "streetAddress": "44 Rabkin Dr",
+      "addressType": "home"
     },
     {
       "id": 3,
-      "emailId": "priti@gmail.com",
-      "password": "sadhit"
+      "firstName": "Nital",
+      "lastName": "Patel",
+      "emailId": "mak8patel@yahoo.co.in",
+      "password": "dasna",
+      "streetAddress": "44 Rabkin Dr",
+      "addressType": "home",
+      "city": null
     },
     {
       "id": 4,
-      "emailId": "priti@gmail.com",
-      "password": "sadhit"
+      "firstName": "Nital",
+      "lastName": "Patel",
+      "emailId": "mak8patel@yahoo.co.in",
+      "password": "dasna",
+      "streetAddress": "44 Rabkin Dr",
+      "addressType": "home",
+      "city": null
     },
     {
       "id": 5,
-      "emailId": "priti@gmail.com",
-      "password": "sadhit"
+      "firstName": "Nital",
+      "lastName": "Patel",
+      "emailId": "mak8patel@yahoo.co.in",
+      "password": "dasna",
+      "streetAddress": "44 Rabkin Dr",
+      "addressType": "home",
+      "city": null
     },
     {
       "id": 6,
-      "emailId": "priti@gmail.com",
-      "password": "sadhit"
-    },
-    {
-      "id": 7,
-      "emailId": "priti@gmail.com",
-      "password": "sadhit"
-    },
-    {
-      "id": 8,
-      "emailId": "priti@gmail.com",
-      "password": "sadhit"
-    },
-    {
-      "id": 9,
-      "emailId": "asdasd",
-      "password": "dasdasda"
-    },
-    {
-      "id": 10,
-      "emailId": "dasda",
-      "password": "dadasdadadwqe"
-    },
-    {
-      "id": 11,
-      "emailId": "rwerwerwrwer",
-      "password": "rwerewrewrw"
-    },
-    {
-      "id": 12,
-      "userName": "Rddahsda",
-      "emailId": "dasdadda",
-      "password": "asdsadasda"
-    },
-    {
-      "id": 13,
-      "userName": "priti",
-      "emailId": "priti@gmail.com",
-      "password": "dasnadas"
-    },
-    {
-      "id": 14,
-      "userName": "priti",
-      "emailId": "priti@gmail.com",
-      "password": "sadhiyt"
-    },
-    {
-      "id": 15,
-      "userName": "priti",
-      "emailId": "priti@gmail.com",
-      "password": "sadhit"
-    },
-    {
-      "id": 16,
-      "userName": "priti",
-      "emailId": "priti@gmail.com",
-      "password": "sadhit"
-    },
-    {
-      "id": 17,
-      "userName": "priti",
-      "emailId": "priti@gmail.com",
-      "password": "dasnadas"
-    },
-    {
-      "id": 18,
-      "userName": "rimpal",
-      "emailId": "rimpal@gmail.com",
-      "password": "angular"
+      "firstName": "Nital",
+      "lastName": "Patel",
+      "emailId": "mak8patel@yahoo.co.in",
+      "password": "dasna",
+      "streetAddress": "44 Rabkin Dr",
+      "addressType": "home",
+      "city": null
     }
   ],
   "IProduct": [
