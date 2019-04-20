@@ -15,6 +15,9 @@ div.card {
 .table {
   margin-top: 10px;
 }
+nav,li{
+  color: #337AB7;
+}
 body{
   background-color: #dddddd;
 }

@@ -8,6 +8,7 @@ import {LoginService} from '../services/login.service';
   styleUrls: ['./bas-navbar.component.css']
 })
 export class BasNavbarComponent implements OnInit {
+  title = 'Acme Product Management';
 
   constructor( private router: Router,
                private user: LoginService) { }
