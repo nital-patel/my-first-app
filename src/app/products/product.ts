@@ -9,4 +9,9 @@ export interface IProduct {
   imageUrl: string;
 }
 
-export class Product { }
+export class Product {
+  productName: any;
+  productCode: boolean;
+  category: boolean;
+  id: number;
+}
