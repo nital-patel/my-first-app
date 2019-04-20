@@ -6,11 +6,13 @@ export class User {
   password: string;
   streetAddress: string;
   addressType: 'home';
-  city: string;
+  city?: string;
+  state: string;
+  zip: string;
 
 
     constructor(myId: number,  firstName: string, lastName: string,
-                emailid: string, password: string, streetAddress: string, addressType: 'home', city: string) {
+                emailid: string, password: string, streetAddress: string, addressType: 'home', city: string, state: string, zip: string) {
     this.id = myId;
     this.firstName = firstName;
     this.lastName = lastName;
@@ -19,6 +21,8 @@ export class User {
     this.streetAddress = streetAddress;
     this.addressType = addressType;
     this.city = city;
+    this.state = state;
+    this.zip = zip;
 
-  }
+    }
 }

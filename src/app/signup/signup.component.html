@@ -183,20 +183,19 @@
 
         <div class="form-group row mb-2">
           <label class="col-md-2 col-form-label"
-                 for="city">City, State, Zip Code</label>
+                 for="cityId">City, State, Zip Code</label>
           <div class="col-md-3">
             <input class="form-control"
-                   id="city"
+                   id="cityId"
                    type="text"
                    placeholder="City"
                    [(ngModel)]="userForm.city"
-                   #cityVar="ngModel"
-                   name="city"
-                   [ngClass]="{'is-invalid': (cityVar.touched || cityVar.dirty) && !cityVar.valid }" />
+                   name="city"/>
           </div>
           <div class="col-md-3">
             <select class="form-control"
                     id="stateId"
+                    type="text"
                     [(ngModel)]="userForm.state"
                     name="state">
               <option value=""
@@ -211,6 +210,7 @@
               <option value="CO">Colorado</option>
               <option value="WI">Wisconsin</option>
               <option value="WY">Wyoming</option>
+              <option value="NY">NewJersey</option>
             </select>
           </div>
           <div class="col-md-2">

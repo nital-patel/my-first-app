@@ -14,8 +14,15 @@ export class LoginComponent {
   loginSucess = false;
   user: User = {
     id: 0,
+    firstName: null,
+    lastName: null,
     emailId: null,
     password: null,
+    streetAddress: null,
+    addressType: 'home',
+    city: null,
+    state: null,
+    zip: null
   };
   constructor(private loginService: LoginService,
               private routingService: ActivatedRoute,

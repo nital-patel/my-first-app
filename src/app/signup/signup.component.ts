@@ -15,7 +15,7 @@ export class SignupComponent implements OnInit {
               private router: Router) {
   }
   myUsers: User[] = [];
-  newUser: User = new User(0,  'null', 'null', 'null', 'null ', 'null', 'home', 'null');
+  newUser: User = new User(0,  'null', 'null', 'null', 'null ', 'null', 'home', 'null', 'null', null);
   // @ts-ignore
   user: User = {
     id: 0,
@@ -26,6 +26,8 @@ export class SignupComponent implements OnInit {
     streetAddress: null,
     addressType: 'home',
     city: null,
+    state: null,
+    zip: null
 
   };
   // @ts-ignore
@@ -39,6 +41,8 @@ export class SignupComponent implements OnInit {
     this.newUser.streetAddress = userForm.streetAddress;
     this.newUser.addressType = this.user.addressType;
     this.newUser.city = this.user.city;
+    this.newUser.state = this.user.state;
+    this.newUser.zip = this.user.zip;
     this.loginService.addNewUser(this.newUser).subscribe(
       (addedUser: User) => {
         this.myUsers.push(addedUser);

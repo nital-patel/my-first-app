@@ -14,7 +14,10 @@
       "emailId": "mak8patel@yahoo.co.in",
       "password": "dasna",
       "streetAddress": "44 Rabkin Dr",
-      "addressType": "home"
+      "addressType": "home",
+      "city": null,
+      "state": null,
+      "zip": null
     },
     {
       "id": 3,
@@ -24,7 +27,9 @@
       "password": "dasna",
       "streetAddress": "44 Rabkin Dr",
       "addressType": "home",
-      "city": null
+      "city": null,
+      "state": null,
+      "zip": null
     },
     {
       "id": 4,
@@ -32,29 +37,21 @@
       "lastName": "Patel",
       "emailId": "mak8patel@yahoo.co.in",
       "password": "dasna",
-      "streetAddress": "44 Rabkin Dr",
       "addressType": "home",
-      "city": null
+      "city": null,
+      "state": null,
+      "zip": null
     },
     {
       "id": 5,
-      "firstName": "Nital",
+      "firstName": "niti",
       "lastName": "Patel",
       "emailId": "mak8patel@yahoo.co.in",
-      "password": "dasna",
-      "streetAddress": "44 Rabkin Dr",
+      "password": "dasnada",
       "addressType": "home",
-      "city": null
-    },
-    {
-      "id": 6,
-      "firstName": "Nital",
-      "lastName": "Patel",
-      "emailId": "mak8patel@yahoo.co.in",
-      "password": "dasna",
-      "streetAddress": "44 Rabkin Dr",
-      "addressType": "home",
-      "city": null
+      "city": null,
+      "state": null,
+      "zip": null
     }
   ],
   "IProduct": [
