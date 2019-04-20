@@ -12,6 +12,7 @@ import {ActivatedRoute, Router} from '@angular/router';
 export class LoginComponent {
   loginMessage: string = null;
   loginSucess = false;
+  pageTitle = 'Log In';
   user: User = {
     id: 0,
     firstName: null,
