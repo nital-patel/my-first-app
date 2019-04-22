@@ -7,7 +7,7 @@ import {User} from '../login/login.user';
   providedIn: 'root'
 })
 export class SpringbootService {
-  url = 'http://localhost:8080'
+  url = 'http://localhost:8080/'
   constructor(private http: HttpClient) {
 
   }

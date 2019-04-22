@@ -17,7 +17,7 @@ export class SignupComponent {
               private springbootService: SpringbootService) {
   }
   myUsers: User[] = [];
-  newUser: User = new User(0,  'null', 'null', 'null', 'null ', 'null', 'home', 'null', 'null', null);
+  newUser: User = new User(0,  'null', 'null', 'null', 'null ', 'null', 'home', 'null', 'null', 'null', true);
   // @ts-ignore
   user: User = {
     id: 0,
@@ -27,6 +27,7 @@ export class SignupComponent {
     password: null,
     streetAddress: null,
     addressType: 'home',
+    sendCatalog: true,
     city: null,
     state: null,
     zip: null
@@ -35,17 +36,17 @@ export class SignupComponent {
   // @ts-ignore
   userForm: FormGroup;
   addUser(userForm) {
-
     console.log(this.user);
     this.newUser.firstName = userForm.firstName;
     this.newUser.lastName = userForm.lastName;
     this.newUser.emailId = userForm.emailId;
     this.newUser.password = userForm.password;
     this.newUser.streetAddress = userForm.streetAddress;
-    this.newUser.addressType = this.user.addressType;
-    this.newUser.city = this.user.city;
-    this.newUser.state = this.user.state;
-    this.newUser.zip = this.user.zip;
+    this.newUser.addressType = userForm.addressType;
+    this.newUser.sendCatalog = this.user.sendCatalog;
+    this.newUser.city = userForm.city;
+    this.newUser.state = userForm.state;
+    this.newUser.zip = userForm.zip;
 
 
     this.springbootService.addnewUser(this.newUser).subscribe(

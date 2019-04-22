@@ -22,6 +22,7 @@ export class LoginComponent {
     password: null,
     streetAddress: null,
     addressType: 'home',
+    sendCatalog: false,
     city: null,
     state: null,
     zip: null

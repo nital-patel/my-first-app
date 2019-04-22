@@ -16,6 +16,7 @@ import { SignupComponent } from './signup/signup.component';
 import {ProductDetailGuard} from './products/product-detail.guard';
 import { WelcomeComponent } from './welcome/welcome.component';
 import {SpringbootService} from './services/springboot.service';
+import { ProductEditComponent } from './products/product-edit/product-edit.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import {SpringbootService} from './services/springboot.service';
     ProductDetailComponent,
     BasNavbarComponent,
     SignupComponent,
-    WelcomeComponent
+    WelcomeComponent,
+    ProductEditComponent
   ],
   imports: [
     BrowserModule,
@@ -40,11 +42,10 @@ import {SpringbootService} from './services/springboot.service';
       {path: 'products', component: ProductListComponent},
       {path: 'products/:id', canActivate: [ProductDetailGuard],
         component: ProductDetailComponent},
-        {path: 'products/:id/edit', canActivate: [ProductDetailGuard],
-          component: ProductDetailComponent},
+        {path: 'products/:id/edit', component: ProductEditComponent},
         {path: 'signup', component: SignupComponent},
         {path: '', component: BasNavbarComponent},
-        {path: 'home', component: WelcomeComponent},
+        {path: 'home', component: WelcomeComponent}
     ])
   ],
   providers: [SpringbootService],
