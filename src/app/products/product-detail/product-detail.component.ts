@@ -10,6 +10,7 @@ import {ProductService} from '../../services/product.service';
 export class ProductDetailComponent implements OnInit {
   pageTitle: 'Product Detail';
   product: IProduct;
+  errorMessage: string;
   constructor(private route: ActivatedRoute,
               private router: Router,
               private productService: ProductService) { }
