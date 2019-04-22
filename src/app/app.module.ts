@@ -38,8 +38,10 @@ import {SpringbootService} from './services/springboot.service';
     ProductdetailModule,
       RouterModule.forRoot([
       {path: 'products', component: ProductListComponent},
-      {path: 'products/:id/edit', canActivate: [ProductDetailGuard],
+      {path: 'products/:id', canActivate: [ProductDetailGuard],
         component: ProductDetailComponent},
+        {path: 'products/:id/edit', canActivate: [ProductDetailGuard],
+          component: ProductDetailComponent},
         {path: 'signup', component: SignupComponent},
         {path: '', component: BasNavbarComponent},
         {path: 'home', component: WelcomeComponent},
