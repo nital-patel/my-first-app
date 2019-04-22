@@ -15,8 +15,7 @@ import {BasNavbarModule} from './bas-navbar/bas-navbar.module';
 import { SignupComponent } from './signup/signup.component';
 import {ProductDetailGuard} from './products/product-detail.guard';
 import { WelcomeComponent } from './welcome/welcome.component';
-import { SpingbootComponent } from './spingboot/spingboot.component';
-import {SpringbootService} from './spingboot/springboot.service';
+import {SpringbootService} from './services/springboot.service';
 
 @NgModule({
   declarations: [
@@ -26,8 +25,7 @@ import {SpringbootService} from './spingboot/springboot.service';
     ProductDetailComponent,
     BasNavbarComponent,
     SignupComponent,
-    WelcomeComponent,
-    SpingbootComponent,
+    WelcomeComponent
   ],
   imports: [
     BrowserModule,

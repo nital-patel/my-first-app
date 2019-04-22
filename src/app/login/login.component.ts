@@ -2,6 +2,7 @@ import {Component} from '@angular/core';
 import { User } from './login.user';
 import { LoginService } from '../services/login.service';
 import {ActivatedRoute, Router} from '@angular/router';
+import {SpringbootService} from '../services/springboot.service';
 
 @Component({
   selector: 'app-login',
@@ -27,11 +28,12 @@ export class LoginComponent {
   };
   constructor(private loginService: LoginService,
               private routingService: ActivatedRoute,
-              private router: Router) {
+              private router: Router,
+              private springbootService: SpringbootService) {
 
   }
   loginUser() {
-    this.loginService.validateUser(this.user).subscribe((returnedUser: User[]) => {
+    this.springbootService.getData(this.user).subscribe((returnedUser: User[]) => {
       if (returnedUser != null && returnedUser.length !== 0) {
         this.loginMessage = 'Login succesfully!';
         this.user = returnedUser[0];

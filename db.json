@@ -6,6 +6,18 @@
       "lastName": "patel",
       "emailId": "niti@gmail.com",
       "password": "angular"
+    },
+    {
+      "id": 2,
+      "firstName": "shrey",
+      "lastName": "patel",
+      "emailId": "angular3@gmail.com",
+      "password": "patel3",
+      "streetAddress": "44 Rabkin Dr",
+      "addressType": "home",
+      "city": null,
+      "state": null,
+      "zip": null
     }
   ],
   "IProduct": [

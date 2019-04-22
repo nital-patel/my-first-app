@@ -3,16 +3,18 @@ import {LoginService} from '../services/login.service';
 import { Router} from '@angular/router';
 import { User} from '../login/login.user';
 import {FormControl, FormGroup, NgForm} from '@angular/forms';
+import {SpringbootService} from '../services/springboot.service';
 
 @Component({
   selector: 'app-signup',
   templateUrl: './signup.component.html',
   styleUrls: ['./signup.component.css']
 })
-export class SignupComponent implements OnInit {
+export class SignupComponent {
   private userAddError: boolean;
   constructor(private loginService: LoginService,
-              private router: Router) {
+              private router: Router,
+              private springbootService: SpringbootService) {
   }
   myUsers: User[] = [];
   newUser: User = new User(0,  'null', 'null', 'null', 'null ', 'null', 'home', 'null', 'null', null);
@@ -33,7 +35,8 @@ export class SignupComponent implements OnInit {
   // @ts-ignore
   userForm: FormGroup;
   addUser(userForm) {
-    console.log(userForm);
+
+    console.log(this.user);
     this.newUser.firstName = userForm.firstName;
     this.newUser.lastName = userForm.lastName;
     this.newUser.emailId = userForm.emailId;
@@ -43,7 +46,9 @@ export class SignupComponent implements OnInit {
     this.newUser.city = this.user.city;
     this.newUser.state = this.user.state;
     this.newUser.zip = this.user.zip;
-    this.loginService.addNewUser(this.newUser).subscribe(
+
+
+    this.springbootService.addnewUser(this.newUser).subscribe(
       (addedUser: User) => {
         this.myUsers.push(addedUser);
         this.userAddError = false;
@@ -55,13 +60,6 @@ export class SignupComponent implements OnInit {
       }
     );
   }
-  ngOnInit(): void {
-    // this.userForm = new FormGroup({
-    //   id: new FormControl(),
-    //   userName: new FormControl(),
-    //   emailId: new FormControl(),
-    //   password: new FormControl()
-    // });
-  }
+
 }
 
