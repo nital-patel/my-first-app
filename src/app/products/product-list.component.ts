@@ -6,9 +6,10 @@ import {LoginService} from '../services/login.service';
 @Component({
   selector: 'app-products',
   templateUrl: './product-list.component.html',
-  styleUrls: ['./product-list.component.css'],
+  styleUrls: ['./product-list.component.css']
 })
 export class ProductListComponent implements OnInit {
+  title = 'Acme Product Management';
   imageWidth = 50;
   imageMargin = 2;
   showImage = false;
@@ -27,7 +28,7 @@ export class ProductListComponent implements OnInit {
               private user: LoginService) {
   }
   onRatingClicked(message: string): void {
-    this.pageTitle = 'Product List: ' + message;
+    this.pageTitle = 'Acme Product Management: ' + message;
   }
   performFilter(filterBy: string): IProduct[] {
     filterBy = filterBy.toLocaleLowerCase();

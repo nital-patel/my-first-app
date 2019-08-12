@@ -7,6 +7,7 @@ import {ActivatedRoute, Router} from '@angular/router';
   styleUrls: ['./welcome.component.css']
 })
 export class WelcomeComponent implements OnInit {
+  title = 'Acme Product Management';
   public pageTitle = 'Welcome';
   constructor(private route: ActivatedRoute,
               private router: Router) { }

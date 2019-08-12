@@ -8,6 +8,7 @@ import {ProductService} from '../../services/product.service';
   styleUrls: ['./product-detail.component.css']
 })
 export class ProductDetailComponent implements OnInit {
+  title = 'Acme Product Management';
   pageTitle: 'Product Detail';
   product: IProduct;
   errorMessage: string;
@@ -31,7 +32,7 @@ export class ProductDetailComponent implements OnInit {
     };
   }
   onBack(): void {
-     this.router.navigate(['/products']);
+    this.router.navigate(['/products']);
   }
 
 }

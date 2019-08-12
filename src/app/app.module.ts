@@ -40,12 +40,14 @@ import { ProductEditComponent } from './products/product-edit/product-edit.compo
     ProductdetailModule,
       RouterModule.forRoot([
       {path: 'products', component: ProductListComponent},
+        {path: 'products/:id', component: ProductDetailComponent},
       {path: 'products/:id', canActivate: [ProductDetailGuard],
         component: ProductDetailComponent},
         {path: 'products/:id/edit', component: ProductEditComponent},
         {path: 'signup', component: SignupComponent},
         {path: '', component: BasNavbarComponent},
-        {path: 'home', component: WelcomeComponent}
+        {path: 'home', component: WelcomeComponent},
+        {path: 'welcome', redirectTo: 'home', pathMatch: 'full'}
     ])
   ],
   providers: [SpringbootService],

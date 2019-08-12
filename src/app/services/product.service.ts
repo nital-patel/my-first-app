@@ -10,7 +10,7 @@ export class ProductService {
   constructor(private http: HttpClient) {
   }
   getMyProducts(): Observable<IProduct[]> {
-    return this.http.get<IProduct[]>("http://localhost:3000/IProduct");
+    return this.http.get<IProduct[]>('http://localhost:3000/IProduct');
   }
 
 }

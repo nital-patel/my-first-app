@@ -11,6 +11,7 @@ import {SpringbootService} from '../services/springboot.service';
 })
 
 export class LoginComponent {
+  title = 'Acme Product Management';
   loginMessage: string = null;
   loginSucess = false;
   pageTitle = 'Log In';

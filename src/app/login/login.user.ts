@@ -11,7 +11,6 @@ export class User {
   state: string;
   zip: string;
 
-
     constructor(myId: number,  firstName: string, lastName: string,
                 emailid: string, password: string, streetAddress: string, addressType: 'home',
                 city: string, state: string, zip: string, sendCatalog: boolean) {

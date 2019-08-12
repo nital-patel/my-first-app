@@ -11,6 +11,7 @@ import {SpringbootService} from '../services/springboot.service';
   styleUrls: ['./signup.component.css']
 })
 export class SignupComponent {
+  title = 'Acme Product Management';
   private userAddError: boolean;
   constructor(private loginService: LoginService,
               private router: Router,

@@ -15,3 +15,7 @@ export class Product {
   category: boolean;
   id: number;
 }
+export interface ProductResolved {
+  product: Product;
+  error?: any;
+}

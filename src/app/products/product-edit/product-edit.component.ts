@@ -1,35 +1,37 @@
-import { Component, OnInit } from '@angular/core';
-import { Product } from '../product';
+import {Component, OnInit} from '@angular/core';
+
+
+import {Product} from '../product';
 import {ProductService} from '../../services/product.service';
-import {ActivatedRoute, Router} from '@angular/router';
 
 @Component({
   selector: 'app-product-edit',
   templateUrl: './product-edit.component.html',
   styleUrls: ['./product-edit.component.css']
 })
-export class ProductEditComponent {
-
+export class ProductEditComponent implements OnInit {
+  title = 'Acme Product Management';
   pageTitle = 'Product Edit';
+  errorMessage: string;
 
   product: Product;
 
-  constructor(private productService: ProductService,
-              private route: ActivatedRoute,
-              private router: Router) { }
+  constructor(private productService: ProductService) {
+  }
+
+  getMyProducts(id: number): void {
+    const {getMyProducts} = this.productService;
+    // @ts-ignore
+    getMyProducts(id)
+      .subscribe(
+      );
+  }
 
   onProductRetrieved(product: Product): void {
     this.product = product;
-
-    if (!this.product) {
-      this.pageTitle = 'No product found';
-    } else {
-      if (this.product.id === 0) {
-        this.pageTitle = 'Add Product';
-      } else {
-        this.pageTitle = `Edit Product: ${this.product.productName}`;
-      }
-    }
   }
-}
 
+  ngOnInit(): void {
+  }
+
+}
